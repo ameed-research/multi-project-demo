@@ -8,3 +8,4 @@ spring:
           account-name: ${STORAGE_ACCOUNT_NAME}
           account-key: ${STORAGE_ACCOUNT_KEY}
           endpoint: https://${spring.cloud.azure.storage.fileshare.account-name}.file.core.windows.net
+          share-name: carpentry-demo-fileshare
