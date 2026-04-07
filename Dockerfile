@@ -19,6 +19,9 @@ RUN chmod +x mvnw && ./mvnw dependency:go-offline -B --no-transfer-progress || t
 COPY frontend/ frontend/
 COPY backend/ backend/
 
+# Remove Windows-generated lock file so npm re-resolves Linux platform deps
+RUN rm -f frontend/package-lock.json
+
 # Build everything (frontend-maven-plugin downloads Node internally)
 RUN ./mvnw clean package -DskipTests --batch-mode --no-transfer-progress
 
