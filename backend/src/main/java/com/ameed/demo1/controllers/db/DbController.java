@@ -20,12 +20,14 @@ public class DbController {
     public Map<String, Object> createPerson() {
         var person = new Person(null, "John", "Doe");
         var savedPerson = repository.save(person);
+        log.info("Saved person {}", savedPerson);
         return Map.of("id", savedPerson.getId(), "firstName", savedPerson.getFirstName(), "lastName", savedPerson.getLastName());
     }
 
     @GetMapping("/list")
     public Map<String, Object> getAll() {
         var all = repository.findAll();
+        log.info("Found {} persons", all.size());
         return Map.of("size", all.size(), "persons", all);
     }
 }

@@ -40,6 +40,7 @@ public class FilesController {
         String fileName = "create-test-%s.txt".formatted(new Random().nextInt(1000));
         shareClient.createFile(fileName, content.length())
                 .upload(inputStream, content.length(), null);
+        log.info("File {} created", fileName);
         return Map.of("fileName", fileName);
     }
 
