@@ -1,6 +1,8 @@
 spring:
   application:
     name: demo1
+  mongodb:
+    uri: ${MONGODB_CONNECTION_STRING}
   cloud:
     azure:
       storage:
