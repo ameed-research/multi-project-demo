@@ -19,8 +19,8 @@ public class MyController {
     private final ShareServiceClient shareServiceClient;
 
     @GetMapping
-    public Map<String, Object> listFilesInShare(String shareName) {
-        ShareClient shareClient = shareServiceClient.getShareClient(shareName);
+    public Map<String, Object> listFilesInShare() {
+        ShareClient shareClient = shareServiceClient.getShareClient("carpentry-demo-fileshare");
         return shareClient.getRootDirectoryClient()
                 .listFilesAndDirectories()
                 .stream().collect(Collectors.toMap(
