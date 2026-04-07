@@ -3,6 +3,7 @@ spring:
     name: demo1
   mongodb:
     uri: ${MONGODB_CONNECTION_STRING}
+    database: ${MONGODB_DATABASE_NAME}
   cloud:
     azure:
       storage:
