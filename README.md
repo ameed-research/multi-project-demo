@@ -15,12 +15,8 @@ Workflow file: `.github/workflows/azure-deploy.yml`
 
 ### Required GitHub Secrets
 
-- `AZURE_CLIENT_ID`
-- `AZURE_TENANT_ID`
-- `AZURE_SUBSCRIPTION_ID`
 - `AZURE_WEBAPP_NAME`
-
-> The workflow uses OpenID Connect (OIDC) via `azure/login`.
+- `AZURE_WEBAPP_PUBLISH_PROFILE`
 
 ### Trigger
 
